@@ -5,7 +5,16 @@ const pc = newPlayableCharacter(100, 110)
 const npc = newNonPlayableCharacter(50, 300)
 
 // have the NPC start walking east immediately
-npc.walkEast()
+
+async function movePattern() {
+    await npc.walkEast(2000)
+    await npc.walkNorth(1000)
+    await npc.walkWest(1000)
+    npc.walkSouth(1000)
+}
+
+movePattern()
+
 
 // Create the inventory
 const inventory = newInventory()
